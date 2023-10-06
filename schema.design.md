@@ -37,10 +37,10 @@ Put the different nouns in this table. Replace the example with your own nouns.
 
 | Record                | Properties                 |
 | --------------------- | -------------------------- |
-| user_account          | email, username            |
+| user                  | email, username            |
 | post                  | title, content, total_views|
 
-1. Name of the first table (always plural): `user_accounts` 
+1. Name of the first table (always plural): `users` 
 
     Column names: `email`, `username`
 
@@ -57,7 +57,7 @@ Most of the time, you'll need either `text`, `int`, `bigint`, `numeric`, or `boo
 Remember to **always** have the primary key `id` as a first column. Its type will always be `SERIAL`.
 
 ```
-Table: user_accounts
+Table: users
 id: SERIAL
 email: text
 username: text
@@ -90,14 +90,14 @@ Replace the relevant bits in this example with your own:
 ```
 # EXAMPLE
 
-1. Can one user_account have many posts? YES
-2. Can one post have many user_accounts? NO
+1. Can one user have many posts? YES
+2. Can one post have many users? NO
 
 -> Therefore,
--> A user_account HAS MANY posts
--> A post BELONGS TO a user_account
+-> A user HAS MANY posts
+-> A post BELONGS TO a user
 
--> Therefore, the foreign key is on the posts table (user_account_id)
+-> Therefore, the foreign key is on the posts table (user_id)
 ```
 
 *If you can answer YES to the two questions, you'll probably have to implement a Many-to-Many relationship, which is more complex and needs a third table (called a join table).*
@@ -111,7 +111,7 @@ Replace the relevant bits in this example with your own:
 -- Replace the table name, columm names and types.
 
 -- Create the table without the foreign key first.
-CREATE TABLE user_accounts (
+CREATE TABLE users (
   id SERIAL PRIMARY KEY,
   email text,
   username text
@@ -123,9 +123,9 @@ CREATE TABLE posts (
   title text,
   content text,
   total_views int,
-  user_account_id int,
-  constraint fk_user_account foreign key(user_account_id)
-    references user_accounts(id)
+  user_id int,
+  constraint fk_user foreign key(user_id)
+    references users(id)
     on delete cascade
 );
 
