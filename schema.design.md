@@ -58,10 +58,12 @@ Remember to **always** have the primary key `id` as a first column. Its type wil
 
 ```
 Table: user_accounts
+id: SERIAL
 email: text
 username: text
 
 Table: posts
+id: SERIAL
 title: text
 content: text
 total_views: int
@@ -116,7 +118,7 @@ CREATE TABLE user_accounts (
 );
 
 -- Then the table with the foreign key second.
-CREATE TABLE  (
+CREATE TABLE posts (
   id SERIAL PRIMARY KEY,
   title text,
   content text,
