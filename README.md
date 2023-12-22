@@ -1,8 +1,8 @@
 # Social Network Database
 
 ## Introduction
-- This is a challenge in Makers Module 3 - Databases
-- I set up this project using a starter project from Makers, as per the challenge instructions below.
+- This is an exercise in Makers Module 3 - Databases
+- I set up this project using a starter project from Makers, as per the exercise instructions below.
 - This project includes a database, containing a `posts` and `users` table.
 - `schema_design.md` documents my design of the `posts` and `users` tables.
 - The main program `app.py` prints a list of all the post and user objects in the database to the terminal.
