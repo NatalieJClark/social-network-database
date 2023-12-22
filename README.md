@@ -4,8 +4,8 @@
 - This is a challenge in Makers Module 3 - Databases
 - I set up this project using a starter project from Makers, as per the challenge instructions below.
 - This project includes a database, containing a `posts` and `users` table.
-- The main program `app.py` prints a list of all the recipes in the database to the terminal.
-- `recipes_schema_recipe.md` documents my design of the `recipes` table
+- `schema_design.md` documents my design of the `posts` and `users` tables.
+- The main program `app.py` prints a list of all the post and user objects in the database to the terminal.
 
 ## Objectives
 - [x] Learn to test-drive "Repository" class methods to INSERT, DELETE and UPDATE.
