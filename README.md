@@ -1,30 +1,68 @@
-# Database Project Starter
+# Social Network Database
 
-This is a starter project for you to use to start your Python database projects.
+## Introduction
+- This is a challenge in Makers Module 3 - Databases
+- I set up this project using a starter project from Makers, as per the challenge instructions below.
+- This project includes a database, containing a `posts` and `users` table.
+- The main program `app.py` prints a list of all the recipes in the database to the terminal.
+- `recipes_schema_recipe.md` documents my design of the `recipes` table
 
-There are two videos to support:
-
-* [A demonstration of setting up the project](https://youtu.be/8dBADUN8gdg?t=0s)
-* [A walkthrough of the project codebase](https://www.youtube.com/watch?v=8dBADUN8gdg&t=287s) 
+## Objectives
+- [x] Learn to test-drive "Repository" class methods to INSERT, DELETE and UPDATE.
+- [x] Design and create tables for the following user stories:
+  - [x] As a social network user,   
+        So I can have my information registered,  
+        I'd like to have a user account with my email address.
+  - [x] As a social network user,  
+        So I can have my information registered,  
+        I'd like to have a user account with my username.
+  - [x] As a social network user,  
+        So I can write on my timeline,  
+        I'd like to create posts associated with my user account.
+  - [x] As a social network user,
+        So I can write on my timeline,  
+        I'd like each of my posts to have a title and a content.
+  - [x] As a social network user,  
+        So I can know who reads my posts,  
+        I'd like each of my posts to have a number of views.
+- [x] Create a seeds/social_network.sql.
+- [x] Test-drive the application to meet the user stories above.
 
 ## Setup
+This project uses `python`, `pyenv` and `pipenv`. Here's how to install it:
 
 ```shell
-# Clone the repository to your local machine
-; git clone git@github.com:makersacademy/databases-in-python-project-starter.git YOUR_PROJECT_NAME
+# Install pyenv, a tool to manage different versions of Python.
+# This will ensure you have the latest Python, which has more readable error messages.
+; brew install pyenv
+# You may be given some extra instructions at the end of the command.
+# If you are, follow them. If not, keep going.
 
-# Or, if you don't have SSH keys set up
-; git clone https://github.com/makersacademy/databases-in-python-project-starter.git YOUR_PROJECT_NAME
+# Now install the latest Python.
+; pyenv install 3.11
+
+# Install pipenv
+; python3 -m ensurepip --upgrade
+; pip3 install --user pipenv
+; echo 'export PATH="$PATH:$(python3 -m site --user-base)/bin" # Add Pipenv to PATH' >> ~/.zshrc
+; source ~/.zshrc
+; pipenv --version # Check pipenv is installed
+pipenv, version ...
+
+# Clone the repository to your local machine
+; git clone https://github.com/NatalieJClark/social-network-database.git YOUR_PROJECT_NAME
 
 # Enter the directory
 ; cd YOUR_PROJECT_NAME
 
 # Install dependencies and set up the virtual environment
 ; pipenv install
-# Read below if you see an error with `python_full_version`
 
 # Activate the virtual environment
 ; pipenv shell
+# NB: you may need to change interpreter path, to import pytest and psycopg
+# This will give you the path to use
+; pipenv --venv
 
 # Create the database
 ; createdb YOUR_PROJECT_NAME
@@ -37,39 +75,6 @@ There are two videos to support:
 
 # Run the app
 ; python app.py
-```
 
-<details>
-  <summary>:confused: I see an error about `python_full_version`?</summary>
-
-  <!-- OMITTED -->
-
-  ---
-
-  Your `pipenv` may be outdated and subject to a bug with newer `Pipfile`s.
-
-  ```shell
-  ; pipenv --version
-  2022.9.24 # If you see something in September 2022, try this
-  ; pip3 install "pipenv>=2022.11.5" -U
-  # pip3 will update pipenv for you
-
-  # Then try running `pipenv install` again
-  ; pipenv install
-  ```
-
-  If that works, great! If not, contact your coach.
-
-  ---
-</details>
-
-
-<!-- BEGIN GENERATED SECTION DO NOT EDIT -->
-
----
-
-**How was this resource?**  
-[😫](https://airtable.com/shrUJ3t7KLMqVRFKR?prefill_Repository=makersacademy%2Fdatabases-in-python-project-starter&prefill_File=README.md&prefill_Sentiment=😫) [😕](https://airtable.com/shrUJ3t7KLMqVRFKR?prefill_Repository=makersacademy%2Fdatabases-in-python-project-starter&prefill_File=README.md&prefill_Sentiment=😕) [😐](https://airtable.com/shrUJ3t7KLMqVRFKR?prefill_Repository=makersacademy%2Fdatabases-in-python-project-starter&prefill_File=README.md&prefill_Sentiment=😐) [🙂](https://airtable.com/shrUJ3t7KLMqVRFKR?prefill_Repository=makersacademy%2Fdatabases-in-python-project-starter&prefill_File=README.md&prefill_Sentiment=🙂) [😀](https://airtable.com/shrUJ3t7KLMqVRFKR?prefill_Repository=makersacademy%2Fdatabases-in-python-project-starter&prefill_File=README.md&prefill_Sentiment=😀)  
-Click an emoji to tell us.
-
-<!-- END GENERATED SECTION DO NOT EDIT -->
+# To exit the pipenv shell
+; exit # or Ctrl-D
